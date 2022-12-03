@@ -230,6 +230,9 @@ MIME 타입은 test/event-stream 이다.
 <hr>
 
 ## HTTP 웹 푸시
+
+<img src="/HTTP/image/PUSH.png" width=800 />
+
 ```
 HTTP 웹 푸시는 웹사이트에 스마트폰 애플리케이션과 같은 알림 기능을 제공하는 구조
 
@@ -237,8 +240,7 @@ HTTP 웹 푸시는 기능의 특성상 브라우저가 그 시점에서 시작�
 사용자에게 알림을 보낼 수 있어야 한다.
 
 Service Worker 프론트엔드 브라우저의 HTML 렌더링 기능으로는 웹 서버와 프론트엔드 중간에 있는 프록시 서버와 같은 존재이다.
-그러나 Service Worker는 항상 실행되는게 아니라, addEventListner() 이벤트 핸들러를 등록해두면, 필요할 때만 실행되어
-처리한다.
+그러나 Service Worker는 항상 실행되는게 아니라, addEventListner() 이벤트 핸들러를 등록해두면, 필요할 때만 실행되어 처리한다.
 ```
 
 
