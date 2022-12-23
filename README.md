@@ -50,7 +50,12 @@
 - [로드 밸런서](https://github.com/MALLLAG/TIL/blob/main/Network/09%20-%20%EB%A1%9C%EB%93%9C%20%EB%B0%B8%EB%9F%B0%EC%84%9C.md)
 
 
+<br>
+<br>
 
+# 컴퓨터 구조와 운영체제
+
+- [컴퓨터 구조의 큰 그림](https://github.com/MALLLAG/TIL/blob/main/%EC%BB%B4%ED%93%A8%ED%84%B0%20%EA%B5%AC%EC%A1%B0%EC%99%80%20%EC%9A%B4%EC%98%81%EC%B2%B4%EC%A0%9C/01%20-%20%EC%BB%B4%ED%93%A8%ED%84%B0%20%EA%B5%AC%EC%A1%B0%EC%9D%98%20%ED%81%B0%20%EA%B7%B8%EB%A6%BC.md)
 
 
 
