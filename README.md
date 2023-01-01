@@ -22,6 +22,7 @@
 - [모든 객체의 공통 메서드](https://github.com/MALLLAG/TIL/blob/main/Effective%20Java/02%20-%20%EB%AA%A8%EB%93%A0%20%EA%B0%9D%EC%B2%B4%EC%9D%98%20%EA%B3%B5%ED%86%B5%20%EB%A9%94%EC%84%9C%EB%93%9C.md)
 - [클래스와 인터페이스](https://github.com/MALLLAG/TIL/blob/main/Effective%20Java/03%20-%20%ED%81%B4%EB%9E%98%EC%8A%A4%EC%99%80%20%EC%9D%B8%ED%84%B0%ED%8E%98%EC%9D%B4%EC%8A%A4.md)
 - [제네릭](https://github.com/MALLLAG/TIL/blob/main/Effective%20Java/04%20-%20%EC%A0%9C%EB%84%A4%EB%A6%AD.md)
+- [열거 타입](https://github.com/MALLLAG/TIL/blob/main/Effective%20Java/05%20-%20%EC%97%B4%EA%B1%B0%20%ED%83%80%EC%9E%85.md)
 
 <br>
 <br>
