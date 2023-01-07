@@ -24,6 +24,7 @@
 - [제네릭](https://github.com/MALLLAG/TIL/blob/main/Effective%20Java/04%20-%20%EC%A0%9C%EB%84%A4%EB%A6%AD.md)
 - [열거 타입](https://github.com/MALLLAG/TIL/blob/main/Effective%20Java/05%20-%20%EC%97%B4%EA%B1%B0%20%ED%83%80%EC%9E%85.md)
 - [람다와 스트림](https://github.com/MALLLAG/TIL/blob/main/Effective%20Java/06%20-%20%EB%9E%8C%EB%8B%A4%EC%99%80%20%EC%8A%A4%ED%8A%B8%EB%A6%BC.md)
+- [메서드](https://github.com/MALLLAG/TIL/blob/main/Effective%20Java/07%20-%20%EB%A9%94%EC%84%9C%EB%93%9C.md)
 
 <br>
 <br>
