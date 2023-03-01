@@ -104,6 +104,78 @@ EJB 2.1 이하 버전을 사용할 때는 EJB를 JEE 컨테이너에서 가져�
 
 # 스프링의 의존성 주입
 
+## 빈과 빈 팩터리
+
+스프링의 의존성 주입 컨테이너의 핵심은 **빈 팩터리 (BeanFactory)** 인터페이스이다.
+
+**BeanFactory**는 컴포넌트의 라이프사이클뿐 아니라 의존성까지 관리한다. <br>
+스프링에서 bean이라는 용어는 컨테이너가 관리하는 모든 컴포넌트를 의미한다.
+
+스프링 내부에서 빈 구성은 BeanDefinition 인터페이스를 구현한 클래스의 인스턴스로 표현된다. <br>
+빈 구성에는 빈 자체에 대한 정보와 의존하는 빈의 정보가 들어있다. <br>
+그러므로 사용자는 BeanFactory내에서 사용자 빈을 식별할 수 있고, 각 빈에 ID나 이름을 지정할 수도 있다.
+
+## 애플리케이션 컨텍스트 (ApplicationContext)
+
+**ApplicationContext** 인터페이스는 BeanFactory를 상속한 인터페이스다. <br>
+ApplicationContext는 DI, 트랜잭션, AOP, 애플리케이션 이벤트 처리와 같은 여러 서비스를 제공한다.
+
+<br>
+<hr>
+
+# 애플리케이션 컨텍스트 구성하기
+
+## 스프링 구성 옵션 설정하기
+
+원래 스프링은 프로퍼티나 XML 파일을 이용해 빈을 정의할 수 있었다. <br>
+스프링 2.5부터는 ApplicationContext를 구성하는데 자바 애너테이션을 지원하기 시작했다.
+
+XML 파일을 사용하면 모든 구성을 자바 코드와 분리해 외부에서 관리할 수 있고, <br>
+애너테이션을 사용하면 개발자가 코드 내에서 DI 구성을 정의하고 확인할 수 있다.
+
+XML 구성을 사용하려면 애플리케이션에서 필요한 스프링 네임스페이스 베이스를 선언해야 한다.
+
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" 
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+       xmlns:c="http://www.springframework.org/schema/c" 
+       xsi:schemaLocation="http://www.springframework.org/schema/beans 
+                           http://www.springframework.org/schema/beans/sprinq-beans.xsd">
+  
+</beans>
+```
+
+<br>
+
+애플리케이션에서 스프링의 애너테이션을 사용하려면 다음 태그를 XML 구성에 선언해야 한다.
+
+<context:component-scan> 태그는 지정한 패키지의 모든 하위 패키지에 있는 클래스에 선언된 <br>
+@Autowired. @Inject. @Resource, @Component, @Controller. @Repository, @Service 애너테이션이 선언된 <br>
+의존성 주입이 가능한 빈의 코드를 스캔하도록 스프링에게 지시한다.
+
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" 
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+       xmlns:context="http://www.springframework.org/schema/context" 
+       xmlns:c="http://www.springframework.org/schema/c" 
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+            http://www.springframework.org/schema/beans/spring-beans.xsd 
+            http://www.springframework.org/schema/context 
+            http://www.springframework.org/schema/context/spring-context.xsd">
+  
+  <context:component-scan base-package="com.apress.prospring5.ch3.annotated"/>
+</beans>
+
+```
+
+## 스프링 컴포넌트 선언하기
+
+
+
+
+
 
 
 
