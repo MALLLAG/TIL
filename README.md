@@ -70,4 +70,5 @@
 - [CPU 스케줄링](https://github.com/MALLLAG/TIL/blob/main/%EC%BB%B4%ED%93%A8%ED%84%B0%20%EA%B5%AC%EC%A1%B0%EC%99%80%20%EC%9A%B4%EC%98%81%EC%B2%B4%EC%A0%9C/11%20-%20CPU%20%EC%8A%A4%EC%BC%80%EC%A4%84%EB%A7%81.md)
 - [프로세스 동기화](https://github.com/MALLLAG/TIL/blob/main/컴퓨터%20구조와%20운영체제/12%20-%20프로세스%20동기화.md)
 - [교착 상태](https://github.com/MALLLAG/TIL/blob/main/%EC%BB%B4%ED%93%A8%ED%84%B0%20%EA%B5%AC%EC%A1%B0%EC%99%80%20%EC%9A%B4%EC%98%81%EC%B2%B4%EC%A0%9C/13%20-%20%EA%B5%90%EC%B0%A9%20%EC%83%81%ED%83%9C.md)
+- [가상 메모리](https://github.com/MALLLAG/TIL/blob/main/%EC%BB%B4%ED%93%A8%ED%84%B0%20%EA%B5%AC%EC%A1%B0%EC%99%80%20%EC%9A%B4%EC%98%81%EC%B2%B4%EC%A0%9C/14%20-%20%EA%B0%80%EC%83%81%20%EB%A9%94%EB%AA%A8%EB%A6%AC.md)
 
