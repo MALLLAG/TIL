@@ -265,23 +265,24 @@ public class Singer {
 @Service("injectSimple") 
 public class InjectSimple {
 
-    @Value("name")
+    @Value("${my.name}")
     private String name; 
     
-    @Value("age")
+    @Value("${my.age}")
     private int age; 
-    
-    @Value("height")
-    private float height;
     
     public String toString() {
         return "이름 : " + name + "\n"
-            + "나이 : " + age + "\n"
-            + "키 : " + height;
+            + "나이 : " + age;
     }
 }
 ```
 
+```yml
+my:
+  name: duck
+  age: 23
+```
 
 
 <br>
