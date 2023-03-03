@@ -235,7 +235,7 @@ inspirationBean은 private이지만 스프링 컨테이너가 리플렉션을 �
 IoC 컨테이너는 Inspiration 타입의 빈을 발견하면 singer 빈의 inspirationBean 멤버에 해당 빈을 주입한다.
 
 ```java
-@Service("singer") 
+@Service
 public class Singer {
 
     @Autowired
@@ -262,7 +262,7 @@ public class Singer {
 애너테이션을 이용해 단순 값을 주입하려면, @Value 애너테이션을 빈 프로퍼티에 적용한다.
 
 ```java
-@Service("injectSimple") 
+@Service
 public class InjectSimple {
 
     @Value("${my.name}")
