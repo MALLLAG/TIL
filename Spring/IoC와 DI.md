@@ -181,7 +181,7 @@ XML 구성을 사용하려면 애플리케이션에서 필요한 스프링 네�
 @Component
 public class HelloWorldMessageProvider implements MessageProvider {
 
-    ©Override
+    @Override
     public String getMessage() {
         return "Hello World!"; 
     }
@@ -265,13 +265,13 @@ public class Singer {
 @Service("injectSimple") 
 public class InjectSimple {
 
-    @Value("John Mayer")
+    @Value("name")
     private String name; 
     
-    @Value("39")
+    @Value("age")
     private int age; 
     
-    @Value("1.92")
+    @Value("height")
     private float height;
     
     public String toString() {
@@ -281,6 +281,8 @@ public class InjectSimple {
     }
 }
 ```
+
+
 
 <br>
 <hr>
