@@ -363,7 +363,37 @@ public class Singer {
 <br>
 <hr>
 
-# 의존성 해석하기
+# 빈에 autowiring하기
+
+스프링은 autowiring하는 다섯 가지 방식을 제공한다.
+
+- byName: 각 프로퍼티와 이름이 같은 빈을 찾아서 연결하려고 시도한다.
+- byType: 스프링은 ApplicationContext에서 동일한 타입의 빈을 대상 빈의 각 프로퍼티에 연결하려고 시도한다.
+- Constructor: 주입이 수정자가 아닌 생성자를 이용해 이루어진다는 점을 제외하면 byType과 같다.
+- default: Constructor 방식과 byType 방식을 자동으로 선택한다. (빈에 기본 생성자가 있다면 byType 방식을 이용)
+- no: 기본값
+
+> 동일한 Applicationcontext 인스턴스에 타입이 동일한 빈이 둘 이상 있으면 스프링은 autowiring에 사용할 타입을 결정할 수 없으며 <br>
+> NoSuchBeanDefinitionException 예외를 던진다.
+
+***@Autowired 애너테이션을 이용할 때 기본 방식은 byType이다.***
+
+## autowiring을 사용하는 경우
+
+**autowiring은 대부분의 경우 사용하면 좋지 않다.**
+
+autowiring은 소규모 애플리케이션에서는 시간을 절약할 수 있지만, 대규모 애플리케이션에서는 유연성이 떨어진다. <br>
+byName을 사용하는 것이 좋은 생각처럼 보이지만, 이 방법은 사용자가 autowiring 기능의 장점을 얻으려고 클래스에 인위적인 프로퍼티 이름을 지정하는 결과로 이어진다.
+
+<br>
+<hr>
+
+# 빈 상속 설정하기
+
+
+
+
+
 
 
 
