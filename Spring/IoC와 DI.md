@@ -395,21 +395,13 @@ byName을 사용하는 것이 좋은 생각처럼 보이지만, 이 방법은 �
 
 스프링은 이 문제를 해결하려고 같은 ApplicationContext 인스턴스에 존재하는 다른 빈의 프로퍼티 설정을 상속받을 수 있도록 <bean> 정의를 제공한다.
   
+```xml
+<beans ...>
+    <bean id="parent" class="com.apress.prospring5.ch3.xml.Singer"
+          p:name="John Mayer" p:age="39" />
   
-  
-  
-  
-  
-  
-
-
-
-
-
-
-
-
-
-
-
+    <bean id="child" class="com.apress.prospringS.ch3.xml.Singer" 
+          parent="parent" p:age="0" />
+</beans>
+```
 
