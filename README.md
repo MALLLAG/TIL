@@ -53,6 +53,8 @@
 
 # Spring
 
+- [IoC와 DI](https://github.com/MALLLAG/TIL/blob/main/Spring/IoC%EC%99%80%20DI.md)
+
 <br>
 
 # 컴퓨터 구조와 운영체제
