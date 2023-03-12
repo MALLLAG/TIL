@@ -54,8 +54,8 @@
 # Spring
 
 - [IoC와 DI](https://github.com/MALLLAG/TIL/blob/main/Spring/IoC%EC%99%80%20DI.md)
-- [스프링 구성 상세와 스프링 부트](https://github.com/MALLLAG/TIL/blob/main/Spring/%EC%8A%A4%ED%94%84%EB%A7%81%20%EA%B5%AC%EC%84%B1%20%EC%83%81%EC%84%B8%EC%99%80%20%EC%8A%A4%ED%94%84%EB%A7%81%20%EB%B6%80%ED%8A%B8.md)
 - [스프링 AOP](https://github.com/MALLLAG/TIL/blob/main/Spring/%EC%8A%A4%ED%94%84%EB%A7%81%20AOP.md)
+- [스프링 구성 상세와 스프링 부트](https://github.com/MALLLAG/TIL/blob/main/Spring/%EC%8A%A4%ED%94%84%EB%A7%81%20%EA%B5%AC%EC%84%B1%20%EC%83%81%EC%84%B8%EC%99%80%20%EC%8A%A4%ED%94%84%EB%A7%81%20%EB%B6%80%ED%8A%B8.md)
 
 <br>
 
