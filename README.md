@@ -37,6 +37,12 @@
 
 <br>
 
+# JPA
+
+- [영속성 관리](https://github.com/MALLLAG/TIL/blob/main/JPA/%EC%98%81%EC%86%8D%EC%84%B1%20%EA%B4%80%EB%A6%AC.md)
+
+<br>
+
 # 네트워크
 
 - [프로토콜](https://github.com/MALLLAG/TIL/blob/main/Network/01%20-%20%ED%94%84%EB%A1%9C%ED%86%A0%EC%BD%9C.md)
