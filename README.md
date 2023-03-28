@@ -40,6 +40,7 @@
 # JPA
 
 - [영속성 관리](https://github.com/MALLLAG/TIL/blob/main/JPA/%EC%98%81%EC%86%8D%EC%84%B1%20%EA%B4%80%EB%A6%AC.md)
+- [프록시](https://github.com/MALLLAG/TIL/blob/main/JPA/프록시.md)
 
 <br>
 
