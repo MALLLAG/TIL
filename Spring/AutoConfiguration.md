@@ -9,7 +9,7 @@ Auto Configuration은 Spring Boot의 조건부 구성(Conditional Configuration)
 <br>
 <hr>
 
-## 조건부 구성(Conditional Configuration)
+## 조건부 구성(Conditional Configuration) *(@ConditionalOnX)*
 
 Spring Boot의 Auto Configuration은 조건부 구성을 사용하여 특정 조건을 만족하는 경우에만 해당 빈이나 구성을 자동으로 생성한다. <br>
 이는 `@Conditional` annotation을 통해 지정되며, 조건을 만족하는 경우에만 자동 구성이 활성화된다. <br>
@@ -36,105 +36,6 @@ public class DatabaseAutoConfiguration {
 > @ConditionalOnClass(Database.class)를 사용하여 Database 클래스의 존재 여부를 확인하는 조건을 설정했다. <br>
 > Database 클래스가 클래스 패스에 존재하는 경우에만 해당 구성이 활성화된다. <br>
 > 또한, @ConditionalOnMissingBean을 사용하여 이미 해당 타입의 빈이 등록되어 있지 않은 경우에만 database() 메서드가 호출되어 Database 빈이 생성된다.
-
-<br>
-
-## @EnableAutoConfiguration
-
-Auto Configuration을 활성화하려면 `@EnableAutoConfiguration` annotation을 사용해야 한다. <br>
-이 annotation은 Spring Boot 애플리케이션 컨텍스트를 구성하기 위해 필요한 빈들을 자동으로 활성화한다.
-
-```java
-@SpringBootApplication
-public class MyApplication {
-
-    public static void main(String[] args) {
-        SpringApplication.run(MyApplication.class, args);
-    }
-}
-```
-
-> @SpringBootApplication annotation을 이용하여 Auto Configuration을 활성화했다. <br>
-> 이 annotation은 @EnableAutoConfiguration을 내부적으로 포함하고 있기 때문에, 별도로 @EnableAutoConfiguration을 사용할 필요가 없다.
-
-<br>
-
-## spring.factories 파일
-
-Auto Configuration은 `META-INF/spring.factories` 파일을 통해 정의된다. <br>
-이 파일은 Spring Boot의 자동 구성 클래스들을 지정하는 역할을 하고, `spring.factories` 파일에는 자동 구성 클래스들의 패키지 경로와 클래스 이름이 명시되어 있다.
-
-```
-org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
-com.example.MyAutoConfiguration,\
-com.example.OtherAutoConfiguration
-```
-
-> spring.factories 파일을 사용함으로써 Spring Boot는 클래스 패스 상에서 Auto Configuration 클래스들을 탐색하고 필요한 빈들을 자동으로 등록하거나 구성을 활성화할 수 있다.
-
-<br>
-
-
-## 구성 우선순위
-
-여러 개의 Auto Configuration이 동일한 빈을 생성하려고 할 때, 구성 우선순위가 사용된다. <br>
-구성 우선순위는 `@AutoConfigureOrder` annotation을 통해 지정할 수 있으며, 낮은 숫자가 높은 우선순위를 의미한다. <br>
-우선순위가 동일한 경우에는 `@ConditionalOnBean`, `@ConditionalOnClass` 등의 annotation을 통해 더 구체적인 조건을 검사하여 결정한다.
-
-<br>
-
-### @AutoConfigureOrder
-
-```java
-@Configuration
-@AutoConfigureOrder(Ordered.HIGHEST_PRECEDENCE)
-public class MyAutoConfiguration {
-    // ...
-}
-```
-
-@AutoConfigureOrder annotation은 자동 구성 클래스의 우선순위를 지정하는 데 사용된다. <br>
-Spring Boot는 자동 구성 클래스를 classpath 상에서 탐색하고, 자동 구성을 수행할 때 우선순위에 따라 빈을 등록하고 구성을 활성화는데, <br>
-@AutoConfigureOrder를 사용하여 이 우선순위를 조정할 수 있다.
-
-### @ConditionalOnBean
-
-```java
-@Configuration
-@ConditionalOnBean(DataSource.class)
-public class MyAutoConfiguration {
-    // ...
-}
-```
-
-@ConditionalOnBean annotation은 특정한 빈이 존재할 때 자동 구성을 활성화하는 조건을 설정하는데 사용된다. <br>
-특정 빈이 존재하는 경우에만 자동 구성을 수행하고 그렇지 않은 경우에는 자동 구성을 건너뛴다. <br>
-
-위 예제에서는 DataSource 빈이 존재할때만 자동 구성이 수행된다.
-
-### @ConditionalOnClass
-
-```java
-@Configuration
-@ConditionalOnClass(name = "com.example.MyClass")
-public class MyAutoConfiguration {
-    // ...
-}
-```
-
-@ConditionalOnClass annotation은 특정한 클래스가 classpath에 존재할 때 자동 구성을 활성화한다. <br>
-특정 클래스가 존재하는 경우에만 자동 구성을 수행하고 그렇지 않은 경우에는 자동 구성을 건너뛴다.
-
-위 예제에서는 com.example.MyClass 클래스가 classpath에 존재할 때만 해당 자동 구성을 활성화한다.
-
-<br>
-
-
-
-## @ConditionalOnX
-
-Spring Boot는 다양한 `@ConditionalOnX` annotation을 제공하여 조건부 구성을 세밀하게 조정할 수 있다. <br>
-이 annotation들은 클래스의 존재 여부, 프로퍼티 값, 빈의 존재 여부 등 다양한 조건을 지정할 수 있다.
 
 <br>
 
@@ -195,6 +96,67 @@ public class MyAutoConfiguration {
 
 위 예제에서는 myapp.feature.enabled 프로퍼티의 값이 true일 때만 MyService 빈을 등록한다.
 
+
+
+<br>
+
+## @EnableAutoConfiguration
+
+Auto Configuration을 활성화하려면 `@EnableAutoConfiguration` annotation을 사용해야 한다. <br>
+이 annotation은 Spring Boot 애플리케이션 컨텍스트를 구성하기 위해 필요한 빈들을 자동으로 활성화한다.
+
+```java
+@SpringBootApplication
+public class MyApplication {
+
+    public static void main(String[] args) {
+        SpringApplication.run(MyApplication.class, args);
+    }
+}
+```
+
+> @SpringBootApplication annotation을 이용하여 Auto Configuration을 활성화했다. <br>
+> 이 annotation은 @EnableAutoConfiguration을 내부적으로 포함하고 있기 때문에, 별도로 @EnableAutoConfiguration을 사용할 필요가 없다.
+
+<br>
+
+## spring.factories 파일
+
+Auto Configuration은 `META-INF/spring.factories` 파일을 통해 정의된다. <br>
+이 파일은 Spring Boot의 자동 구성 클래스들을 지정하는 역할을 하고, `spring.factories` 파일에는 자동 구성 클래스들의 패키지 경로와 클래스 이름이 명시되어 있다.
+
+```
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+com.example.MyAutoConfiguration,\
+com.example.OtherAutoConfiguration
+```
+
+> spring.factories 파일을 사용함으로써 Spring Boot는 클래스 패스 상에서 Auto Configuration 클래스들을 탐색하고 필요한 빈들을 자동으로 등록하거나 구성을 활성화할 수 있다.
+
+<br>
+
+
+## 구성 우선순위
+
+여러 개의 Auto Configuration이 동일한 빈을 생성하려고 할 때, 구성 우선순위가 사용된다. <br>
+구성 우선순위는 `@AutoConfigureOrder` annotation을 통해 지정할 수 있으며, 낮은 숫자가 높은 우선순위를 의미한다. <br>
+우선순위가 동일한 경우에는 `@ConditionalOnBean`, `@ConditionalOnClass` 등의 annotation을 통해 더 구체적인 조건을 검사하여 결정한다.
+
+<br>
+
+### @AutoConfigureOrder
+
+```java
+@Configuration
+@AutoConfigureOrder(Ordered.HIGHEST_PRECEDENCE)
+public class MyAutoConfiguration {
+    // ...
+}
+```
+
+@AutoConfigureOrder annotation은 자동 구성 클래스의 우선순위를 지정하는 데 사용된다. <br>
+Spring Boot는 자동 구성 클래스를 classpath 상에서 탐색하고, 자동 구성을 수행할 때 우선순위에 따라 빈을 등록하고 구성을 활성화는데, <br>
+@AutoConfigureOrder를 사용하여 이 우선순위를 조정할 수 있다.
 
 <br>
 
