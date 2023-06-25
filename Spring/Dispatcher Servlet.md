@@ -29,6 +29,48 @@ Dispatcher Servlet은 Spring MVC 웹 애플리케이션의 핵심 컴포넌트�
 7. 찾은 뷰는 Model 객체와 함께 클라이언트에게 응답으로 보내진다.
 8. 클라이언트는 응답을 받고, 필요에 따라 새로운 요청을 보낼 수 있다.
 
+<br>
+
+## Handler Mapping
+
+Handler Mapping은 Dispatcher Servlet이 클라이언트의 요청을 처리할 핸들러를 결정하는 역할을 수행하는 컴포넌트이다. <br>
+Handler Mapping은 요청의 경로, HTTP 메소드, 요청 헤더 등을 기준으로 적절한 핸들러를 찾아주는 역할을 한다.
+
+### RequestMappingHandlerMapping
+
+RequestMappingHandlerMapping은 @RequestMapping 어노테이션을 사용하여 매핑된 핸들러를 찾는 가장 일반적인 Handler Mapping이다. <br>
+@RequestMapping 어노테이션이 적용된 메소드와 요청 경로를 비교하여 일치하는 핸들러를 찾는다. <br>
+이 Handler Mapping은 클래스와 메소드 단위의 @RequestMapping 어노테이션을 모두 고려하여 핸들러를 결정한다.
+
+### SimpleUrlHandlerMapping
+
+SimpleUrlHandlerMapping은 URL 패턴과 핸들러를 매핑하는 Handler Mapping이다. <br>
+설정 파일에서 URL 패턴과 핸들러 간의 매핑을 정의하며, 요청의 경로와 일치하는 패턴을 가진 핸들러를 찾는다. <br>
+주로 정적인 URL 패턴과 고정된 핸들러를 매핑할 때 사용된다.
+
+### BeanNameUrlHandlerMapping
+
+BeanNameUrlHandlerMapping은 핸들러의 빈 이름과 요청 경로를 매핑하는 Handler Mapping이다. <br>
+Spring의 빈 컨테이너에서 핸들러의 빈 이름을 기준으로 매핑을 수행하고, 핸들러의 빈 이름과 요청 경로가 일치하는 경우 해당 핸들러를 선택한다.
+
+<br>
+
+## Handler Adapter
+
+Handler Adapter는 Dispatcher Servlet이 핸들러와 상호 작용하고, 핸들러의 실행을 처리하는 역할을 담당하는 컴포넌트이다. <br>
+핸들러의 실행 결과를 적절한 응답으로 변환하고, Dispatcher Servlet으로 반환해준다.
+
+### RequestMappingHandlerAdapter
+
+RequestMappingHandlerAdapter는 @RequestMapping 어노테이션을 사용하여 매핑된 핸들러의 실행을 처리하는 Handler Adapter이다. <br>
+핸들러 메소드의 매개변수와 반환 값을 처리하며, 요청 파라미터 추출, 데이터 바인딩, 검증, 반환 값 변환 등의 작업을 수행한다.
+
+### HttpRequestHandlerAdapter
+
+HttpRequestHandlerAdapter는 HttpRequestHandler 인터페이스를 구현한 핸들러의 실행을 처리하는 Handler Adapter이다. <br>
+HttpRequestHandler는 서블릿 API의 HttpServletRequest와 HttpServletResponse를 직접 다루는 핸들러를 위한 인터페이스이다. <br>
+HttpRequestHandlerAdapter는 이러한 핸들러의 실행을 적절하게 처리하여 요청과 응답을 관리한다.
+
 
 <br>
 <hr>
