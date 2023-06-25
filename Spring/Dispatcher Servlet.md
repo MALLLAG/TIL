@@ -10,14 +10,7 @@ Dispatcher Servlet은 Spring MVC 웹 애플리케이션의 핵심 컴포넌트�
 
 # Dispatcher Servlet 구조
 
-```mermaid
-graph LR
-A[Client] --> B[Dispatcher Servlet]
-B --> C[Handler Mapping]
-B --> D[Handler Adapter]
-B --> E[View Resolver]
-B --> F[Controller]
-```
+<img src="img/1.png" width="800" />
 
 > 클라이언트가 Dispatcher Servlet에게 요청을 보내고, Dispatcher Servlet은 Handler Mapping을 통해 어떤 핸들러가 해당 요청을 처리할지 찾는다. <br>
 > 그 후 Dispatcher Servlet은 Handler Adapter를 통해 찾은 핸들러를 실행하고, 핸들러의 실행 결과를 View Resolver를 통해 적절한 뷰로 변환한다. <br>
